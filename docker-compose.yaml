@@ -1,6 +1,17 @@
 version: '3.8'
 
 services:
+  # nginx service
+  nginx:
+    container_name: "nginx"
+    image: nginx:alpine
+    depends_on:
+      - backend_fastapi_ai
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+
   # postgress service
   database:
     image: "postgres:12.2-alpine"
@@ -13,7 +24,7 @@ services:
       - .env
 
   # fastapi app
-  backend_fastapi:
+  backend_fastapi_ai:
     container_name: api_ai_mate
     build:
       context: .
