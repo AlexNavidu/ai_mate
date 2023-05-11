@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  # postgress service
+  database:
+    image: "postgres:12.2-alpine"
+    volumes:
+      - /var/lib/postgresql/data/
+    container_name: db_ai_mate
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+
+  # fastapi app
+  backend_fastapi:
+    container_name: api_ai_mate
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    env_file:
+      - .env
