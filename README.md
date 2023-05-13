@@ -31,6 +31,8 @@ POSTGRES_DB=database_ai_mate <br>
 DB_HOST=0.0.0.0 <br>
 DB_PORT=5432 <br>` 
 
+SECRET = add some word
+
 
 #### 3. В корне проекта запустить
 
@@ -39,4 +41,4 @@ docker-compose up --build
 ---
 
 #### Работа с api 
-Документация ко всем ручкам описана в redoc
+Документация ко всем ручкам описана в /doc/
