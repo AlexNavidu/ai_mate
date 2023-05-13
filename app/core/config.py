@@ -8,6 +8,7 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = '.env'
+        env_prefix = "DB_"
 
 
 settings = Settings()
