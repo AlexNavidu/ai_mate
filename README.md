@@ -23,7 +23,7 @@
 
 Шаблон заполнения файла. 
 
-`DATABASE_URL = postgresql+asyncpg://POSTGRES_USER:POSTGRES_PASSWORD@NAME_CONTAINER_POSTGRESS:5432/POSTGRES_DB
+DATABASE_URL=postgresql+asyncpg://POSTGRES_USER:POSTGRES_PASSWORD@NAME_CONTAINER_POSTGRESS:5432/POSTGRES_DB
 
 POSTGRES_USER=user <br>
 POSTGRES_PASSWORD=passsword <br>
@@ -31,7 +31,7 @@ POSTGRES_DB=database_ai_mate <br>
 DB_HOST=0.0.0.0 <br>
 DB_PORT=5432 <br>` 
 
-SECRET = add some word
+SECRET=add_some_word
 
 
 #### 3. В корне проекта запустить
