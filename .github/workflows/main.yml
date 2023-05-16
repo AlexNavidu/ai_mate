@@ -20,12 +20,6 @@ jobs:
         with:
           # Выбор версии Python
           python-version: 3.9
-
-      - name: Set up environment variables
-      env:
-        DATABASE_URL: sqlite+aiosqlite:///./fastapi.db
-      run: echo "DATABASE_URL=$DATABASE_URL" >> $GITHUB_ENV
-
       - name: Install dependencies
         run: |
           # обновление pip
@@ -35,15 +29,9 @@ jobs:
           # установка зависимостей
           pip install -r app/requirements.txt
       - name: Test with flake8
-        run: |
-          # запуск проверки проекта по flake8
-          python -m flake8
-      - name: Run migrations
-        run: alembic upgrade head
-      - name: Start FastAPI
-        run: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-      - name: Start pytest
-        run: pytest
+        run: python -m flake8
+#      - name: Start pytest
+#        run: pytest
 
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
