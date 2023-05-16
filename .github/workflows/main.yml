@@ -32,8 +32,12 @@ jobs:
         run: |
           # запуск проверки проекта по flake8
           python -m flake8
-          # запуск тестов
-          pytest
+      - name: Run migrations
+        run: alembic upgrade head
+      - name: Start FastAPI
+        run: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+      - name: Start pytest
+        run: pytest
 
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
