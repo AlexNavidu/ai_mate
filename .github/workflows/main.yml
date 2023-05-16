@@ -33,7 +33,6 @@ jobs:
           # запуск проверки проекта по flake8
           python -m flake8
           # запуск тестов
-          cd ai_mate/
           pytest
 
   build_and_push_to_docker_hub:

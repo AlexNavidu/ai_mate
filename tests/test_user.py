@@ -15,5 +15,4 @@ def test_register_user():
         "is_verified": False
     }
     response = client.post('/api/v1/auth/register', json=data)
-    print(response.url)
     assert response.status_code == 201
