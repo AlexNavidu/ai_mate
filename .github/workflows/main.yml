@@ -20,6 +20,12 @@ jobs:
         with:
           # Выбор версии Python
           python-version: 3.9
+
+      - name: Set up environment variables
+      env:
+        DATABASE_URL: sqlite+aiosqlite:///./fastapi.db
+      run: echo "DATABASE_URL=$DATABASE_URL" >> $GITHUB_ENV
+
       - name: Install dependencies
         run: |
           # обновление pip
