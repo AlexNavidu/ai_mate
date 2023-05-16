@@ -8,7 +8,7 @@ client = TestClient(app)
 def test_register_user():
 
     data = {
-        "email": "user@example.com",
+        "email": "user1@example.com",
         "password": "string",
         "is_active": True,
         "is_superuser": False,
