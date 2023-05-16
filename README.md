@@ -29,7 +29,7 @@ POSTGRES_USER=user <br>
 POSTGRES_PASSWORD=passsword <br>
 POSTGRES_DB=database_ai_mate <br>
 DB_HOST=0.0.0.0 <br>
-DB_PORT=5432 <br>` 
+DB_PORT=5432 <br>
 
 SECRET=add_some_word
 
