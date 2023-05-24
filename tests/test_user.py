@@ -1,14 +1,13 @@
 from fastapi.testclient import TestClient
-
 from app.main import app
+
 
 client = TestClient(app)
 
 
 def test_register_user():
-
     data = {
-        "email": "user1@example.com",
+        "email": "user23@example.com",
         "password": "string",
         "is_active": True,
         "is_superuser": False,

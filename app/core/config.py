@@ -1,9 +1,9 @@
-from pydantic import BaseSettings
+from pydantic import BaseSettings, Field
 
 
 class Settings(BaseSettings):
     app_title: str = 'AI Mate - GPT chat'
-    database_url: str = 'sqlite+aiosqlite:///./fastapi.db'
+    database_url: str = Field(..., env='DATABASE_URL')
     secret: str = 'SECRET'
 
     class Config:
