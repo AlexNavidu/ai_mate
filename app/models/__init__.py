@@ -1,5 +1,5 @@
-from .message import Message
-from .сhat import Chat
-from .user import User
-from .topic import Topic
-from .suggestion import Suggestion
+from .message import Message  # noqa
+from .suggestion import Suggestion  # noqa
+from .topic import Topic  # noqa
+from .user import User  # noqa
+from .сhat import Chat  # noqa
