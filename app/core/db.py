@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer
+from sqlalchemy import Column, Integer, MetaData
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import declarative_base, declared_attr, sessionmaker
 
@@ -15,6 +15,8 @@ class PreBase:
 
 
 Base = declarative_base(cls=PreBase)
+
+metadata = MetaData()
 
 async_engine = create_async_engine(settings.database_url, echo=True)
 
