@@ -60,3 +60,27 @@ client = TestClient(app)
 async def ac() -> AsyncGenerator[AsyncClient, None]:
     async with AsyncClient(app=app, base_url="http://test") as ac:
         yield ac
+
+
+@pytest.fixture
+async def registered_user_token(ac: AsyncClient) -> str:
+    """
+    Сreated a user for testing
+    """
+    register_data = {
+        "email": "user24@example.com",
+        "password": "xtcnmbolo86",
+        "is_active": True,
+        "is_superuser": False,
+        "is_verified": False
+    }
+    register_response = await ac.post('/api/v1/auth/register', json=register_data)
+    assert register_response.status_code == 201
+    login_data = {
+        "username": "user23@example.com",
+        "password": "xtcnmbolo86"
+    }
+    login_response = await ac.post('/api/v1/auth/jwt/login', data=login_data)
+    assert login_response.status_code == 200
+    access_token = login_response.json()["access_token"]
+    return access_token

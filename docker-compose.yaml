@@ -22,6 +22,17 @@ services:
       - "5432:5432"
     env_file:
       - .env
+  # database for test
+  # TODO отложил пока разбор с тестовой базой.
+#  test_database:
+#    image: "postgres:12.2-alpine"
+#    volumes:
+#      - /var/lib/postgresql/test_data/
+#    container_name: test_db_ai_mate
+#    ports:
+#      - "5434:5432"
+#    env_file:
+#      - .env.test
 
   # fastapi app
   backend_fastapi_ai:

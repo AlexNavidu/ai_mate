@@ -3,8 +3,8 @@ from httpx import AsyncClient
 
 async def test_register_user(ac: AsyncClient):
     data = {
-        "email": "user23@example.com",
-        "password": "xtcnmbolo86",
+        "email": "superman@example.com",
+        "password": "ddsadds",
         "is_active": True,
         "is_superuser": False,
         "is_verified": False
@@ -15,8 +15,8 @@ async def test_register_user(ac: AsyncClient):
 
 async def test_auth_user(ac: AsyncClient):
     data = {
-        "username": "user23@example.com",
-        "password": "xtcnmbolo86"
+        "username": "superman@example.com",
+        "password": "ddsadds"
     }
     response = await ac.post(
         '/api/v1/auth/jwt/login',
